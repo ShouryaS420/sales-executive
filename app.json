@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "server",
+    "slug": "server",
+    "version": "1.0.0",
+    "description": "sales executive for lead management",
+    "sdkVersion": "49.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "android": {
+      "package": "com.shouryacoding.server"
+    }
+  }
+}
