@@ -21,7 +21,7 @@ router.route("/checkEmailMobileExist").post(checkEmailMobileExist);
 router.route("/login").post(login);
 router.route("/logout").get(logout);
 router.route("/me").get(isAuthenticated, getMyProfile);
-router.route("/forgetPassword").get(forgetPassword);
+router.route("/forgetPassword").post(forgetPassword);
 router.route("/verifyOTP").put(verifyOTP);
 router.route("/resetPassword").put(resetPassword);
 router.route("/addTeamMember").post(addTeamMember);

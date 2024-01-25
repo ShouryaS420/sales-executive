@@ -1,6 +1,6 @@
 import { User } from "../models/users.js";
 import { sendToken } from "../utils/sendToken.js";
-import { sendMail } from "../utils/sendMail.js";
+import { sendMail } from "../utils/sendmail.js";
 
 export const register = async (req, res) => {
     try {
@@ -38,11 +38,7 @@ export const checkEmailMobileExist = async (req, res) => {
     try {
         const { email } = req.body;
     
-        const user = await User.findOne({
-            $or: [
-                { email: email },
-            ],
-        });
+        const user = await User.findOne({ email });
     
         if (user) {
             return res.status(400).json({ success: false, message: "User already exists" });
@@ -136,7 +132,7 @@ export const forgetPassword = async (req, res) => {
         
         await sendMail(email, "Verify your account", message);
         
-        res.status(200).send({ success: true, message: `OTP sent to your ${email}` });
+        res.status(200).send({ success: true, message: `OTP sent to your ${email}`, OTP: otp });
         
     } catch (error) {
         res.status(500).send({ success: false, message: `server error: ${error.message}` });
