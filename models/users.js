@@ -9,7 +9,6 @@ const userSchema = new mongoose.Schema({
     },
     fullName: {
         type: String,
-        required: true,
     },
     middleName: {
         type: String,
@@ -23,11 +22,14 @@ const userSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: true,
+    },
+    img: {
+        type: String,
+        default: "image",
     },
     mobile: {
         type: String,
-        required: true,
+        default: "",
     },
     role: {
         type: String,
@@ -40,6 +42,10 @@ const userSchema = new mongoose.Schema({
     },
     pin: {
         type: String,
+    },
+    firmName: {
+        type: String,
+        default: "",
     },
     rera: {
         type: String,
@@ -57,6 +63,8 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    emailVerified: { type: Boolean, default: false },
+    mobileVerified: { type: Boolean, default: false },
     resetPasswordOtp: Number,
     resetPasswordOtpExpiry: Date,
 });

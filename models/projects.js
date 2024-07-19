@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
-const projectSchema = new mongoose.Schema({
+const ProjectSchema = new mongoose.Schema({
     builderID: {
         type: String,
         // required: true,
@@ -20,30 +20,6 @@ const projectSchema = new mongoose.Schema({
         required: true,
     },
     projectName: {
-        type: String,
-        required: true,
-    },
-    rera: {
-        type: String,
-        required: true,
-    },
-    landParcel: {
-        type: String,
-        required: true,
-    },
-    noOfTowers: {
-        type: String,
-        required: true,
-    },
-    totalUnits: {
-        type: String,
-        required: true,
-    },
-    possessionDate: {
-        type: String,
-        required: true,
-    },
-    launchDate: {
         type: String,
         required: true,
     },
@@ -67,13 +43,51 @@ const projectSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    landParcel: {
+        type: String,
+        required: true,
+    },
+    sizes: {
+        type: String,
+        required: true,
+    },
+    noOfTowers: {
+        type: String,
+        required: true,
+    },
+    totalUnits: {
+        type: String,
+        required: true,
+    },
+    rera: {
+        type: String,
+        required: true,
+    },
+    launchDate: {
+        type: String,
+        required: true,
+    },
+    possessionDate: {
+        type: String,
+        required: true,
+    },
+    floorPlan: {
+        type: Array,
+    },
+    amenities: {
+        type: Array,
+    },
     soldOut: {
-      type: String,
-      default: false,
+        type: Boolean,
+        default: false,
     },
     publish: {
-      type: String,
-      default: false,
+        type: Boolean,
+        default: false,
+    },
+    newlyAdded: {
+        type: Boolean,
+        default: false,
     },
     upcoming: {
         type: Boolean,
@@ -87,6 +101,6 @@ const projectSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-});
+}, { timestamps: true });
 
-export const Project = mongoose.model("projects-details", projectSchema);
+export const Project = mongoose.model("projects-details", ProjectSchema);

@@ -11,6 +11,9 @@ import {
     addTeamMember,
     getTeamMember,
     excelData,
+    sendVerification,
+    verifyCode,
+    getUserById,
 } from "../controllers/User.js";
 import { isAuthenticated } from "../middleware/auth.js";
 
@@ -24,8 +27,12 @@ router.route("/me").get(isAuthenticated, getMyProfile);
 router.route("/forgetPassword").post(forgetPassword);
 router.route("/verifyOTP").put(verifyOTP);
 router.route("/resetPassword").put(resetPassword);
-router.route("/addTeamMember").post(addTeamMember);
+router.route("/addTeamMember").post(addTeamMember); 
 router.route("/getTeamMember/:bossID").get(getTeamMember);
 router.route("/excelData").post(excelData);
+
+router.route("/sendVerification").post(sendVerification);  // added
+router.route("/verifyCode").post(verifyCode);  // added
+router.route("/getUserById/:id").get(getUserById);  // added
 
 export default router;
