@@ -1,7 +1,7 @@
 import { Excel } from "../models/excel.js";
 import { Employee } from "../models/employee.js";
 import { sendToken } from "../utils/sendToken.js";
-import { sendMail } from "../utils/sendMail.js";
+import { sendMail } from "../utils/sendmail.js";
 import mongoose from "mongoose";
 
 export const excelData = async (req, res) => {
