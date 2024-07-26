@@ -7,11 +7,13 @@ import SiteVisit from "./routers/SiteVisit.js";
 import LeadAssignment from "./routers/LeadAssignment.js";
 import TeamRoutes from "./routers/TeamRoutes.js";
 import employeeRoutes from "./routers/employeeRoutes.js";
-
 import projectsRoute from './routers/projects.js';
 import developersRoute from './routers/developers.js';
 import usersRoute from './routers/users.js';
 import adminUsersRoute from './routers/adminUsers.js';
+
+import officeTimingsRoutes from './routers/officeTimingsRoutes.js';//add
+import checkInRouter from './routers/checkInRouter.js';//add
 
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -35,3 +37,6 @@ app.use('/api/projects', projectsRoute);
 app.use('/api/developers', developersRoute);
 app.use('/api/user', usersRoute);
 app.use('/api/auth', adminUsersRoute);
+
+app.use('/api/officeTime', officeTimingsRoutes);//add
+app.use('/api/checkIn', checkInRouter);//add
